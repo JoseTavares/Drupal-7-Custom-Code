@@ -1,0 +1,17 @@
+<?php
+/**
+ * Implements hook_quicktabs_tabstyles().
+ */
+
+function quicktabs_modal_quicktabs_tabstyles() {
+  $quicktabs_modal_directory = drupal_get_path('module', 'quicktabs_modal') . '/modal';
+  $files = file_scan_directory($quicktabs_modal_directory, '/\.css$/');
+  $data = array();
+  foreach ($files as $file) {
+    // Skip RTL files.
+    if (!strpos($file->name, '-rtl')) {
+      $data[$file->uri] = drupal_ucfirst($file->name);
+    }
+  }
+  return $data;
+}

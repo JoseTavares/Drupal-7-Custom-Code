@@ -1,0 +1,9 @@
+name = Quicktabs Modal
+description = Render quicktab content within a modal
+core = 7.x
+files[] = quicktabs-modal.module
+scripts[] = js/quicktabs-modal.js
+
+configure = admin/structure/quicktabs_modal
+dependencies[] = "ctools"
+dependencies[] = "quicktabs"
